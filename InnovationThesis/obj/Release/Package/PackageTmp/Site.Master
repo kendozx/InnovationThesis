@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InnovationThesis.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>นวัตกรรมระบบประเมินมหาวิทยาลัย</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script type='application/javascript' src='../Scripts/fastclick.js'></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="~/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon-16x16.png">
+    <link rel="mask-icon" href="~/images/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="~/images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        #img90 {
+            display: block;
+        }
+
+        #img70 {
+            display: none
+        }
+
+        #img50 {
+            display: none
+        }
+
+        @media all and (max-width: 768px) {
+            #img90 {
+                display: none;
+            }
+
+            #img70 {
+                display: none;
+            }
+
+            #img50 {
+                display: block;
+            }
+        }
+
+        @media all and (max-width: 992px) and (min-width: 769px) {
+            #img90 {
+                display: none;
+            }
+
+            #img70 {
+                display: block;
+            }
+
+            #img50 {
+                display: none;
+            }
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #FF945B;
+        }
+
+        .btn-primary {
+            border-color: #FF945B;
+            background-color: #FF945B;
+        }
+
+            .btn-primary:hover {
+                border-color: #Fc7E41;
+                background-color: #Fc7E41;
+            }
+
+            .btn-primary:active:focus {
+                border-color: #FF945B !important;
+            background-color: #FF945B !important;
+            box-shadow: none;
+            }
+
+            .dropdown-item:active:focus {
+                border-color: #FF945B !important;
+            background-color: #FF945B !important;
+            box-shadow: none;
+            }
+
+            .badge-primary {
+                border-color: #FF945B !important;
+            background-color: #FF945B !important;
+            }
+    </style>
+</head>
+<body style="background: url(../images/bg1.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="border-bottom:1px solid #ffffff;border-top:5px solid #88c041;">
+            <a class="navbar-brand" style="padding-top: 0; padding-bottom: 0; margin-right: 0" href="../">
+                <img class="navbar-brand" id="img90" src="../images/logo_90px.png" alt="">
+                <img class="navbar-brand" id="img70" src="../images/logo_70px.png" alt="">
+                <img class="navbar-brand" id="img50" src="../images/logo_50px.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-column" id="navbar">
+                <ul class="d-none d-lg-block navbar-nav nav w-100">
+                    <li class="nav-item">
+                        <a data-toggle="tab" style="padding-bottom: 0;">
+                            <h5 style="margin-left:8px;margin-top:8px;">นวัตกรรมระบบประเมินมหาวิทยาลัยเพื่อการแบ่งปันบุคลากรสู่อุตสาหกรรม<br />
+                                Innovative University Assessment System for Personnel Sharing to Industry
+                            </h5>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav nav w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" runat="server" href="~/">หน้าแรก</a>
+                    </li>
+                    <li class="d-none d-lg-block nav-item"><a class="nav-link" runat="server">|</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" runat="server" href="#">ที่มาของโครงการ</a>
+                    </li>
+                    <li class="d-none d-lg-block nav-item"><a class="nav-link" runat="server">|</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Contact">ติดต่อนักวิจัย</a>
+                    </li>
+                    <asp:PlaceHolder runat="server" ID="phNotLogin" Visible="true">
+                        <li class="d-none d-lg-block nav-item"><a class="nav-link" runat="server">|</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Account/Login">เข้าสู่ระบบ</a>
+                        </li>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder runat="server" ID="phLoggedinUser" Visible="false">
+                        <li class="d-none d-lg-block nav-item"><a class="nav-link" runat="server">|</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เมนูของฉัน&nbsp;<span class="fas fa-star" style="color: #ffd800"></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="../Account/Profile">จัดการข้อมูลส่วนตัว</a>
+                                <a class="dropdown-item" href="../Evaluation/EvaluationList">รายการประเมินใหม่&nbsp;<span class="badge badge-pill badge-primary">1</span></a>
+                                <a class="dropdown-item" href="../Evaluation/EvalResultList">ผลการประเมินย้อนหลัง</a>
+                            </div>
+                        </li>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder runat="server" ID="phLoggedinAdmin" Visible="false">
+                        <li class="d-none d-lg-block nav-item"><a class="nav-link" runat="server">|</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เมนูผู้ดูแลระบบ&nbsp;<span class="fas fa-tools"></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkAdmin">
+                                <a class="dropdown-item" href="../Account/Profile">จัดการข้อมูลส่วนตัว</a>
+                                <a class="dropdown-item" href="../Account/UserManagement">จัดการข้อมูลผู้ใช้งาน</a>
+                                <a class="dropdown-item" href="../Evaluation/ManageEval">จัดการข้อมูลแบบประเมิน</a>
+                            </div>
+                        </li>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder runat="server" ID="phLoggedin" Visible="false">
+                        <li class="d-none d-lg-block nav-item"><a class="nav-link" runat="server">|</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Account/Logout">ออกจากระบบ</a>
+                        </li>
+                    </asp:PlaceHolder>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container body-content" style="padding-top: 60px">
+            <div class="d-none d-lg-block" style="height:50px"></div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year + 543 %> - นวัตกรรมระบบประเมินมหาวิทยาลัยเพื่อการแบ่งปันบุคลากรสู่อุตสาหกรรม</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
